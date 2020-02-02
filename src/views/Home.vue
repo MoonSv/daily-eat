@@ -69,6 +69,11 @@
             </el-card>
           </el-col>
         </el-row>
+        <el-row>
+          <!-- <router-link to="/relation"> -->
+            <el-link type="info" @click="jumpTo()">77 private link</el-link>
+          <!-- </router-link> -->
+        </el-row>
       </el-main>
     </el-container>
     <el-footer class="footer">©77&Zoe copy right</el-footer>
@@ -76,8 +81,12 @@
 </template>
 
 <script>
+// import Relations from "../views/Relations";
 export default {
-  name: "HelloWorld",
+  name: "Home",
+  components: {
+    // Relations
+  },
   props: {
     msg: String
   },
@@ -109,6 +118,10 @@ export default {
       let date = fullDate.getDate();
       this.current_date = `${year}-${month}-${date}`;
       return `${year} - ${month} - ${date}`;
+    },
+    jumpTo: function() {
+      console.log("123");
+      this.$router.push('/relation')
     }
   }
 };
